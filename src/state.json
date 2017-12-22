@@ -1,0 +1,29 @@
+{
+    "periods": [
+        {
+            "id": "666",
+            "name": "Mock Period 1",
+            "startDate": "01/01/2018",
+            "endDate": "31/01/2018",
+            "notes": "Mock notes.",
+            "expanded": true,
+            "movements": [
+                {
+                    "id": "666",
+                    "concept": "Mock income 1",
+                    "value": "666",
+                    "type": "INCOME",
+                    "status": "N/A"
+                },
+                {
+                    "id": "666",
+                    "concept": "Mock expense 1",
+                    "value": "66",
+                    "type": "EXPENSE",
+                    "status": "PAID"
+                }
+            ]
+        }
+    ],
+    "currentPeriod": "666"
+}
