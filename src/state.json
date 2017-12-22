@@ -12,14 +12,13 @@
                     "id": "666",
                     "concept": "Mock income 1",
                     "value": "666",
-                    "type": "INCOME",
-                    "status": "N/A"
+                    "movementType": "INCOME"
                 },
                 {
                     "id": "666",
                     "concept": "Mock expense 1",
                     "value": "66",
-                    "type": "EXPENSE",
+                    "movementType": "EXPENSE",
                     "status": "PAID"
                 }
             ]

@@ -1,13 +1,13 @@
 import uuid from 'uuid';
-import { MOVEMENT_STATUS, MOVEMENT_TYPES, ACTIONS } from './Constants.js';
+import { ACTIONS } from '../constants.js';
 
-export const addMovement = (concept, value, type, status) => ({
+export const addMovement = (concept, value, movementType, status) => ({
     id: uuid.v4(),
     type: ACTIONS.ADD_MOVEMENT,
     concept,
     value,
-    type,
-    statusstatus
+    movementType,
+    status
 });
 
 export const editConcept = (id, concept) => ({

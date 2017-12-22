@@ -1,6 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { periods, currentPeriod } from './reducers.js';
-import stateData from './initialState';
+import stateData from '../state.json';
 /**
  * The idea here would be to define a Service Layer
  * that will query an endpoint to get the Periods and
@@ -12,11 +12,10 @@ const getInitialState = (data = {}) => {
 };
 
 const logger = (store) => (next) => (action) => {
-    let result;
     console.groupCollapsed('dispatching', action.type);
     console.log('Prev State:', store.getState());
     console.log('Action:', action);
-    let result = next(action);
+    next(action);
     console.log('Next State:', store.getState());
     console.groupEnd();
 };

@@ -1,4 +1,4 @@
-import { ACTIONS, MOVEMENT_TYPES, MOVEMENT_STATUS } from './Constants.js';
+import { ACTIONS, MOVEMENT_TYPES, MOVEMENT_STATUS } from '../constants.js';
 
 export const movement = (state = {}, action) => {
     switch (action.type) {
@@ -29,7 +29,7 @@ export const movement = (state = {}, action) => {
                 ? state
                 : {
                     ...state,
-                    type: state.type === MOVEMENT_TYPES.INCOME
+                    movementType: state.movementType === MOVEMENT_TYPES.INCOME
                         ? MOVEMENT_TYPES.EXPENSE
                         : MOVEMENT_TYPES.INCOME
                 };
@@ -38,7 +38,7 @@ export const movement = (state = {}, action) => {
                 ? state
                 : {
                     ...state,
-                    status: state.type === MOVEMENT_STATUS.PAID
+                    status: state.status === MOVEMENT_STATUS.PAID
                         ? MOVEMENT_STATUS.UNPAID
                         : MOVEMENT_STATUS.PAID
                 }
@@ -106,19 +106,19 @@ export const period = (state = {}, action) => {
                     ...state,
                     endDate: action.endDate
                 };
-        case TOGGLE_INFO:
+        case ACTIONS.TOGGLE_INFO:
             return (state.id !== action.id)
                 ? state
                 : {
                     ...state,
-                    expanded: !expanded
+                    expanded: !state.expanded
                 };
-        case ADD_MOVEMENT:
-        case REMOVE_MOVEMENT:
-        case EDIT_CONCEPT:
-        case EDIT_VALUE:
-        case TOGGLE_TYPE:
-        case TOGGLE_STATUS:
+        case ACTIONS.ADD_MOVEMENT:
+        case ACTIONS.REMOVE_MOVEMENT:
+        case ACTIONS.EDIT_CONCEPT:
+        case ACTIONS.EDIT_VALUE:
+        case ACTIONS.TOGGLE_TYPE:
+        case ACTIONS.TOGGLE_STATUS:
             return {
                 ...state,
                 movements: movements(state.movements, action)
