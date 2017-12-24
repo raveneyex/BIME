@@ -1,6 +1,8 @@
 import React from 'react';
 import PeriodInfo from './PeriodInfo.js';
 
+import './PeriodList.css';
+
 const PeriodList = ({periods, changePeriod}) => {
 
     return (

@@ -1,0 +1,15 @@
+.editable-field {
+    border: 0;
+    margin: 0;
+    font-size: 40px;
+    line-height: 50px;
+
+    flex: 1 0 100%;
+    width: 100%;
+    height: 50px;
+}
+
+.editable-field:focus {
+    border: 0;
+    outline: 0;
+}

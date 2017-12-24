@@ -167,7 +167,7 @@ export const periods = (state = [], action) => {
 export const currentPeriod = (state = '', action) => {
     switch (action.type) {
         case ACTIONS.SWITCH_PERIOD:
-            return action.id;
+            return state.id !== action.id ? action.id : state;
         default:
             return state;
     }

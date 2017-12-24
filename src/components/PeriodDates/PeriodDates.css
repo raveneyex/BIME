@@ -1,0 +1,18 @@
+.period-dates {
+    flex: 1 1 100%;
+}
+
+.period-dates .period-start_date,
+.period-dates .period-end_date {
+    box-sizing: border-box;
+    width: 50%;
+    padding: 10px;
+}
+
+.period-start_date {
+    text-align: left;
+}
+
+.period-end_date {
+    text-align: right;
+}

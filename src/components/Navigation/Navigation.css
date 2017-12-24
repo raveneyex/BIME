@@ -1,0 +1,11 @@
+.navigation {
+    list-style: none;
+    flex: 1 1 100%;
+
+    display: flex;
+}
+
+.navigation .navigation-link {
+    flex: 1 1 auto;
+    cursor: pointer;
+}

@@ -1,9 +1,13 @@
 # ToDo
+
     * Design Components:
         * Movement
         * Period
         * PeriodList
         * App
+
+    * Make PeriodList & Period the containers.
+        * App is dumb.
     
     * Fully bind actions to UI
 

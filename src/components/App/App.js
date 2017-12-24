@@ -1,6 +1,8 @@
 import React from 'react';
-import PeriodList from './Periods/PeriodList';
-import PeriodDetail from './Periods/PeriodDetail';
+import PeriodList from '../PeriodList/PeriodList';
+import Period from '../Period/Period';
+import Navigation from '../Navigation/Navigation';
+import './App.css';
 
 const App = (props) => {
     const {
@@ -17,8 +19,9 @@ const App = (props) => {
         
     return (
         <div className="app">
+            <Navigation goHome={changePeriod} />
         {period
-            ? <PeriodDetail period={period} 
+            ? <Period period={period} 
                 changeStartDate={changeStartDate}
                 changeEndDate={changeEndDate}
                 changeName={changeName} />

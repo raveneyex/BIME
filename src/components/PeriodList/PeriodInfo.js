@@ -1,4 +1,5 @@
 import React from 'react';
+import './PeriodInfo.css';
 
 const PeriodInfo = ({ period, onClick }) => {
     const { name, startDate, endDate } = period; 

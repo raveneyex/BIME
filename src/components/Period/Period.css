@@ -1,0 +1,12 @@
+.period-detail {
+    flex: 1 1 50%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    
+    border: 1px solid gray;
+    box-shadow: 1px 1px 1px gray;
+
+    display: flex;
+}
