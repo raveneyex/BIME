@@ -1,4 +1,11 @@
 # ToDo
+    * Design Components:
+        * Movement
+        * Period
+        * PeriodList
+        * App
+    
+    * Fully bind actions to UI
 
     * Modify ActionCreators 1: Create a fn() that expects a dispatch method and returns an object with actions that have dispatch available.
 

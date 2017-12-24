@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import App from './App.js';
+import App from './App/App.js';
 import { switchCurrentPeriod, editStartDate, editEndDate, editName } from '../redux/actionCreators.js';
 
 export const AppContainer = connect(
