@@ -1,0 +1,19 @@
+.period-movement {
+    margin: 0;
+    padding: 10px;
+
+    display: flex;
+    width: 100;
+
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+.period-movement:first-child {
+    border-top: 0;
+}
+
+.period-movement:last-child {
+    border-bottom: 0;
+    border-top: 0;
+}

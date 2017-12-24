@@ -5,8 +5,12 @@
 .period-dates .period-start_date,
 .period-dates .period-end_date {
     box-sizing: border-box;
-    width: 50%;
+    
+    font-size: 40px;
+    line-height: 50px;
+    
     padding: 10px;
+    width: 50%;
 }
 
 .period-start_date {

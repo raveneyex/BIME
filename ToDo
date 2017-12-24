@@ -11,7 +11,17 @@
     
     * Fully bind actions to UI
 
+    * Check BEM
+        * Possibly refactor className in whole app to follow BEM.
+
     * Modify ActionCreators 1: Create a fn() that expects a dispatch method and returns an object with actions that have dispatch available.
 
     * Modify ActionCreators 2: Include Validations.
-        * This implies adding VALIDATION ACTIONS.   
+        * This implies adding VALIDATION ACTIONS. 
+    
+## Style Cleanups
+
+* Do not include extension on `import` statements;
+* Do not use `"` for strings
+* Create a very strict linter 
+    *only one prop ? destructuring on component's signature : destructuring inside fn.

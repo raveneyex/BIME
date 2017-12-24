@@ -1,7 +1,7 @@
 import React from 'react';
 import PeriodTitle from '../PeriodTitle/PeriodTitle';
 import PeriodDates from '../PeriodDates/PeriodDates';
-import MovementList from '../Movements/MovementList.js';
+import PeriodMovements from '../PeriodMovements/PeriodMovements.js';
 import ExpandableData from '../ExpandableData/ExpandableData.js';
 
 import './Period.css';
@@ -38,7 +38,7 @@ const Period = (props) => {
                     endDate={endDate}
                     onStartDateChange={onStartDateChange}
                     onEndDateChange={onEndDateChange} />
-                <MovementList movements={movements} />
+                <PeriodMovements movements={movements} />
                 <ExpandableData period={period} />
             </form>
         </div>
