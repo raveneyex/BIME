@@ -54,16 +54,19 @@ export const editNote = (id, notes) => ({
 
 export const editName = (id, name) => ({
     type: ACTIONS.EDIT_NAME,
+    id,
     name
 });
 
 export const editStartDate = (id, startDate) => ({
     type: ACTIONS.EDIT_START_DATE,
+    id,
     startDate
 });
 
 export const editEndDate = (id, endDate) => ({
     type: ACTIONS.EDIT_END_DATE,
+    id,
     endDate
 });
 

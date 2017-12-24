@@ -22,7 +22,30 @@
                     "status": "PAID"
                 }
             ]
+        },
+        {
+            "id": "667",
+            "name": "Mock Period 2",
+            "startDate": "01/01/2018",
+            "endDate": "31/01/2018",
+            "notes": "Mock notes.",
+            "expanded": true,
+            "movements": [
+                {
+                    "id": "666",
+                    "concept": "Mock income 2",
+                    "value": "666",
+                    "movementType": "INCOME"
+                },
+                {
+                    "id": "666",
+                    "concept": "Mock expense ",
+                    "value": "66",
+                    "movementType": "EXPENSE",
+                    "status": "PAID"
+                }
+            ]
         }
     ],
-    "currentPeriod": "666"
+    "currentPeriod": null
 }

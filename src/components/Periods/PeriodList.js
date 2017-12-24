@@ -1,12 +1,14 @@
 import React from 'react';
-import Period from './Period.js';
+import PeriodInfo from './PeriodInfo.js';
 
 const PeriodList = ({periods, changePeriod}) => {
-    debugger;
+
     return (
         <ul className="periods">
             {periods.map((period, index) =>
-                <Period key={index} {...period} onClick={() => {changePeriod(period.id)} } />
+                <PeriodInfo key={index}
+                    period={period} 
+                    onClick={() => changePeriod(period.id) }/>
             )}
         </ul>
     );

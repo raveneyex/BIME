@@ -1,0 +1,6 @@
+# ToDo
+
+    * Modify ActionCreators 1: Create a fn() that expects a dispatch method and returns an object with actions that have dispatch available.
+
+    * Modify ActionCreators 2: Include Validations.
+        * This implies adding VALIDATION ACTIONS.   

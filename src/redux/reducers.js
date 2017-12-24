@@ -67,6 +67,7 @@ export const movements = (state = [], action) => {
 };
 
 export const period = (state = {}, action) => {
+    debugger;
     switch (action.type) {
         case ACTIONS.ADD_PERIOD:
             return {
@@ -86,12 +87,23 @@ export const period = (state = {}, action) => {
                     notes: action.notes
                 };
         case ACTIONS.EDIT_NAME:
-            return (state.id !== action.id)
-                ? state
-                : {
+            debugger;
+            let ret;
+            if (state.id !== action.id) {
+                ret = state;
+            } else {
+                ret = {
                     ...state,
                     name: action.name
                 };
+            }
+            return ret;
+            // return (state.id !== action.id)
+            //     ? state
+            //     : {
+            //         ...state,
+            //         name: action.name
+            //     };
         case ACTIONS.EDIT_START_DATE:
             return (state.id !== action.id)
                 ? state
@@ -137,6 +149,9 @@ export const periods = (state = [], action) => {
             ];
         case ACTIONS.REMOVE_PERIOD:
             return state.filter(item => item.id !== action.id);
+        case ACTIONS.EDIT_NAME:
+        case ACTIONS.EDIT_START_DATE:
+        case ACTIONS.EDIT_END_DATE:
         case ACTIONS.ADD_MOVEMENT:
         case ACTIONS.REMOVE_MOVEMENT:
         case ACTIONS.EDIT_CONCEPT:

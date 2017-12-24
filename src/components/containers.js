@@ -1,15 +1,24 @@
 import { connect } from 'react-redux';
-import PeriodList from './Periods/PeriodList.js';
-import { switchCurrentPeriod } from '../redux/actionCreators.js';
+import App from './App.js';
+import { switchCurrentPeriod, editStartDate, editEndDate, editName } from '../redux/actionCreators.js';
 
-export const Periods = connect(
-    (state) => ({   //MapStateToProps
-        periods: [...state.periods]
+export const AppContainer = connect(
+    (state) => ({
+        periods: [...state.periods],
+        currentPeriod: state.currentPeriod
     }),
-    (dispatch) => ({    //MapDispatchToProps
+    (dispatch) => ({
         changePeriod(id) {
-            dispatch(switchCurrentPeriod(id))
+            dispatch(switchCurrentPeriod(id));
+        },
+        changeStartDate(id, startDate) {
+            dispatch(editStartDate(id, startDate));
+        },
+        changeEndDate(id, endDate) {
+            dispatch(editEndDate(id, endDate))
+        },
+        changeName(id, name) {
+            dispatch(editName(id, name));
         }
     })
-)(PeriodList);
-
+)(App);
