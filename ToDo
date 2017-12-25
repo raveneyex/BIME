@@ -5,10 +5,9 @@
 * Find typography and apply app-wide
 
 * Design Components:
-    * Movement
-    * Period
-    * PeriodList
-    * App
+    * Movement Type
+    * Movements
+    * Period Info
 
 * Check BEM
     * Possibly refactor className in whole app to follow BEM.
