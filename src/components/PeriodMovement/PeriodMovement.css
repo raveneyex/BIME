@@ -1,9 +1,11 @@
 .period-movement {
+    box-sizing: border-box;
     margin: 0;
     padding: 10px;
 
     display: flex;
-    width: 100;
+    flex-wrap: wrap;
+    width: 100%;
 
     border-top: 1px solid gray;
     border-bottom: 1px solid gray;
@@ -17,3 +19,4 @@
     border-bottom: 0;
     border-top: 0;
 }
+

@@ -1,0 +1,26 @@
+.movement-value {
+    flex: 0 0 35%;
+    width: 35%;
+
+    display: flex;
+}
+
+.movement-value .currency-sign {
+    border: 0;
+    margin: 0;
+
+    flex: 0 0 15%;
+    width: 15%;
+    height: 50px;
+
+    font-size: 40px;
+    line-height: 45px;
+
+    color: darkgray;
+}
+
+.movement-value .movement-value_input {
+    line-height: 45px;
+    flex: 0 0 75%;
+    font-size: 40px;
+}

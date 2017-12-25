@@ -1,0 +1,31 @@
+.movement-status {
+    flex: 1 1 100%;
+    text-align: right;
+    
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.movement-status .status-badge {
+    width: 65px;
+    display: inline-block;
+    padding: .25em .4em;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    text-transform: capitalize;
+}
+
+.movement-status .status-paid {
+    color: #fff;
+    background-color: #28a745;
+}
+
+.movement-status .status-unpaid {
+    color: #fff;
+    background-color: #dc3545;
+}

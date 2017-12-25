@@ -11,7 +11,8 @@ const App = (props) => {
         changePeriod,
         changeStartDate,
         changeEndDate,
-        changeName
+        changeName,
+        toggleStatus
     } = props;
     const period = currentPeriod 
         ? periods.find(p => p.id === currentPeriod) 
@@ -24,7 +25,8 @@ const App = (props) => {
             ? <Period period={period} 
                 changeStartDate={changeStartDate}
                 changeEndDate={changeEndDate}
-                changeName={changeName} />
+                changeName={changeName}
+                toggleStatus={toggleStatus} />
             : <PeriodList periods={periods} 
                 changePeriod={changePeriod} />
         }

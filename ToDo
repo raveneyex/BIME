@@ -1,27 +1,38 @@
 # ToDo
 
-    * Design Components:
-        * Movement
-        * Period
-        * PeriodList
-        * App
+## Design
 
-    * Make PeriodList & Period the containers.
-        * App is dumb.
-    
-    * Fully bind actions to UI
+* Find typography and apply app-wide
 
-    * Check BEM
-        * Possibly refactor className in whole app to follow BEM.
+* Design Components:
+    * Movement
+    * Period
+    * PeriodList
+    * App
 
-    * Modify ActionCreators 1: Create a fn() that expects a dispatch method and returns an object with actions that have dispatch available.
+* Check BEM
+    * Possibly refactor className in whole app to follow BEM.
 
-    * Modify ActionCreators 2: Include Validations.
-        * This implies adding VALIDATION ACTIONS. 
-    
-## Style Cleanups
+## Code
+
+* Make PeriodList & Period the containers.
+    * App is dumb.
+
+* Fully bind actions to UI
+
+* Add formater to value input
+* Add formater to date input
+
+* Modify ActionCreators 1: Create a fn() that expects a dispatch method and returns an object with actions that have dispatch available.
+
+* Modify ActionCreators 2: Include Validations.
+    * This implies adding VALIDATION ACTIONS.
+
+## Architecture
 
 * Do not include extension on `import` statements;
+
 * Do not use `"` for strings
+
 * Create a very strict linter 
-    *only one prop ? destructuring on component's signature : destructuring inside fn.
+    * only one prop ? destructuring on component's signature : destructuring inside fn.

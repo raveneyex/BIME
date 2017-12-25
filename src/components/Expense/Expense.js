@@ -1,14 +1,17 @@
 import React from 'react';
 import PeriodMovement from '../PeriodMovement/PeriodMovement';
+import MovementStatus from '../MovementStatus/MovementStatus';
 import './Expense.css';
 
-const Expense = ({movement}) => {
+const Expense = ({movement, toggleStatus}) => {
     return (
         <PeriodMovement
             type={movement.movementType}
             className='period-expense' 
             movement={movement}>
-            <div className="status">Status: {movement.status}</div>
+            <MovementStatus
+                toggleStatus={() => toggleStatus(movement.id)}
+                status={movement.status} />
         </PeriodMovement>
     );
 };

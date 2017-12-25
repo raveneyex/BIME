@@ -1,6 +1,12 @@
 import { connect } from 'react-redux';
 import App from './App/App.js';
-import { switchCurrentPeriod, editStartDate, editEndDate, editName } from '../redux/actionCreators.js';
+import { 
+    switchCurrentPeriod, 
+    editStartDate, 
+    editEndDate, 
+    editName,
+    toggleStatus
+} from '../redux/actionCreators.js';
 
 export const AppContainer = connect(
     (state) => ({
@@ -19,6 +25,9 @@ export const AppContainer = connect(
         },
         changeName(id, name) {
             dispatch(editName(id, name));
+        },
+        toggleStatus(id) {
+            dispatch(toggleStatus(id));
         }
     })
 )(App);
