@@ -4,7 +4,13 @@ import EditableField from '../EditableField/EditableField';
 import './MovementValue.css';
 
 const MovementValue = (props) => {
-    const { defaultValue, onBlur = () => {} } = props;
+    const { defaultValue, changeValue = () => {} } = props;
+    
+    const onChangeValue = (event) => {
+        let value = event.target.value;
+        changeValue(value);
+    };
+
     return (
         <div className='movement-value'>
             <input
@@ -16,7 +22,7 @@ const MovementValue = (props) => {
                 className='movement-value_input'
                 name='movement-value'
                 defaultValue={defaultValue}
-                onBlur={onBlur} />
+                onBlur={onChangeValue} />
         </div>
     );
 };

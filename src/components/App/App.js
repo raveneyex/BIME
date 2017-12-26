@@ -12,7 +12,9 @@ const App = (props) => {
         changeStartDate,
         changeEndDate,
         changeName,
-        toggleStatus
+        toggleStatus,
+        changeValue,
+        changeConcept
     } = props;
     const period = currentPeriod 
         ? periods.find(p => p.id === currentPeriod) 
@@ -22,12 +24,16 @@ const App = (props) => {
         <div className="app">
             <Navigation goHome={changePeriod} />
         {period
-            ? <Period period={period} 
+            ? <Period 
+                period={period} 
                 changeStartDate={changeStartDate}
                 changeEndDate={changeEndDate}
                 changeName={changeName}
-                toggleStatus={toggleStatus} />
-            : <PeriodList periods={periods} 
+                toggleStatus={toggleStatus}
+                changeValue={changeValue}
+                changeConcept={changeConcept} />
+            : <PeriodList 
+                periods={periods} 
                 changePeriod={changePeriod} />
         }
         </div>

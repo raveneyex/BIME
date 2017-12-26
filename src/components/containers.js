@@ -5,7 +5,9 @@ import {
     editStartDate, 
     editEndDate, 
     editName,
-    toggleStatus
+    toggleStatus,
+    editConcept,
+    editValue
 } from '../redux/actionCreators.js';
 
 export const AppContainer = connect(
@@ -28,6 +30,12 @@ export const AppContainer = connect(
         },
         toggleStatus(id) {
             dispatch(toggleStatus(id));
+        },
+        changeValue(id, value) {
+            dispatch(editValue(id, value));
+        },
+        changeConcept(id, concept) {
+            dispatch(editConcept(id, concept));
         }
     })
 )(App);

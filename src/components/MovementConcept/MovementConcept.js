@@ -4,13 +4,19 @@ import './MovementConcept.css';
 import EditableField from '../EditableField/EditableField';
 
 const MovementConcept = (props) => {
-    const { defaultValue, onBlur = () => {} } = props;
+    const { defaultValue, changeConcept = () => {} } = props;
+
+    const onChangeConcept = (event) => {
+        let value  = event.target.value;
+        changeConcept(value);
+    };
+
     return (
         <EditableField
             className='movement-concept'
             name='movement-concept'
             defaultValue={defaultValue}
-            onBlur={onBlur} />
+            onBlur={onChangeConcept} />
     );
 };
 

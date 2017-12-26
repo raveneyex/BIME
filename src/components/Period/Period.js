@@ -8,7 +8,15 @@ import './Period.css';
 
 
 const Period = (props) => {
-    const { period, changeStartDate, changeEndDate, changeName, toggleStatus } = props;
+    const { 
+        period, 
+        changeStartDate, 
+        changeEndDate, 
+        changeName, 
+        toggleStatus, 
+        changeValue, 
+        changeConcept 
+    } = props;
     const { name, startDate, endDate, movements } = period;
     const ID = period.id;
     
@@ -40,7 +48,9 @@ const Period = (props) => {
                     onEndDateChange={onEndDateChange} />
                 <PeriodMovements 
                     movements={movements}
-                    toggleStatus={toggleStatus} />
+                    toggleStatus={toggleStatus}
+                    changeValue={changeValue}
+                    changeConcept={changeConcept} />
                 <ExpandableData period={period} />
             </form>
         </div>

@@ -19,6 +19,8 @@
 
 * Fully bind actions to UI
 
+* Add TabIndex
+
 * Add formater to value input
 * Add formater to date input
 
