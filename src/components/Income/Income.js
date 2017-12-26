@@ -3,7 +3,13 @@ import PeriodMovement from '../PeriodMovement/PeriodMovement';
 
 import './Income.css';
 
-const Income = ({movement, changeValue, changeConcept}) => {
+const Income = ({
+    movement = {}, 
+    changeValue = () => {}, 
+    changeConcept = () => {}
+}) => {
+    const { movementType, id, status } = movement;
+
     const onChangeValue = (id) => (value) => {
         changeValue(id, value);
     };
@@ -11,13 +17,14 @@ const Income = ({movement, changeValue, changeConcept}) => {
     const onChangeConcept = (id) => (concept) => {
         changeConcept(id, concept);
     };
+
     return (
         <PeriodMovement
-            type={movement.movementType}
+            type={movementType}
             className='period-income' 
             movement={movement} 
-            changeValue={onChangeValue(movement.id)}
-            changeConcept={onChangeConcept(movement.id)}/>
+            changeValue={onChangeValue(id)}
+            changeConcept={onChangeConcept(id)}/>
     );
 };
 export default Income;

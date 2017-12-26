@@ -3,7 +3,10 @@ import PeriodInfo from './PeriodInfo.js';
 
 import './PeriodList.css';
 
-const PeriodList = ({periods, changePeriod}) => {
+const PeriodList = ({
+    periods = [], 
+    changePeriod = () => {}
+}) => {
 
     return (
         <ul className="periods">

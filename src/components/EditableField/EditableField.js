@@ -1,8 +1,12 @@
 import React from 'react';
 import './EditableField.css';
 
-const EditableField = (props) => {
-    const { name, onBlur, defaultValue, className } = props;
+const EditableField = ({
+    name = '',
+    defaultValue = '',
+    className = '',
+    onBlur = () => {}
+}) => {
     return (
         <input 
             type="text"
@@ -10,7 +14,6 @@ const EditableField = (props) => {
             name={name}
             onBlur={onBlur}
             defaultValue={defaultValue}/>
-
     );
 };
 

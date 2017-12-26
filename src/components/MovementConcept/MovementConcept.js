@@ -3,9 +3,10 @@ import React from 'react';
 import './MovementConcept.css';
 import EditableField from '../EditableField/EditableField';
 
-const MovementConcept = (props) => {
-    const { defaultValue, changeConcept = () => {} } = props;
-
+const MovementConcept = ({
+    defaultValue = '',
+    changeConcept = () => {}
+}) => {
     const onChangeConcept = (event) => {
         let value  = event.target.value;
         changeConcept(value);
@@ -13,8 +14,8 @@ const MovementConcept = (props) => {
 
     return (
         <EditableField
-            className='movement-concept'
             name='movement-concept'
+            className='movement-concept'
             defaultValue={defaultValue}
             onBlur={onChangeConcept} />
     );

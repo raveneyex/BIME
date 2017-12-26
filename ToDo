@@ -14,15 +14,12 @@
 
 ## Code
 
-* Make PeriodList & Period the containers.
-    * App is dumb.
-
 * Fully bind actions to UI
 
 * Add TabIndex
-
 * Add formater to value input
 * Add formater to date input
+* Add placeholders to inputs
 
 * Modify ActionCreators 1: Create a fn() that expects a dispatch method and returns an object with actions that have dispatch available.
 
@@ -36,4 +33,4 @@
 * Do not use `"` for strings
 
 * Create a very strict linter 
-    * only one prop ? destructuring on component's signature : destructuring inside fn.
+   * All props have defaults.

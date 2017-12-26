@@ -1,7 +1,10 @@
 import React from 'react';
 import './PeriodInfo.css';
 
-const PeriodInfo = ({ period, onClick }) => {
+const PeriodInfo = ({
+    period = {}, 
+    onClick = () => {}
+}) => {
     const { name, startDate, endDate } = period; 
     return (
         <li className="period-info" onClick={onClick}>

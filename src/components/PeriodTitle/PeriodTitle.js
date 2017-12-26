@@ -2,8 +2,10 @@ import React from 'react';
 import EditableField from '../EditableField/EditableField';
 import './PeriodTitle.css';
 
-const PeriodTitle = (props) => {
-    const { defaultValue, onBlur = () => {}} = props;
+const PeriodTitle = ({
+    defaultValue,
+    onBlur = () => {}
+}) => {
     return (
         <EditableField
             className='period-title'

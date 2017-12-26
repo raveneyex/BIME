@@ -1,9 +1,15 @@
 import React from 'react';
 import PeriodMovement from '../PeriodMovement/PeriodMovement';
-import MovementStatus from '../MovementStatus/MovementStatus';
 import './Expense.css';
 
-const Expense = ({movement, toggleStatus, changeValue, changeConcept}) => {
+const Expense = ({
+    movement = {}, 
+    toggleStatus = () => {}, 
+    changeValue = () => {}, 
+    changeConcept = () => {}
+}) => {
+    const { movementType, id, status } = movement;
+
     const onChangeValue = (id) => (value) => {
         changeValue(id, value);
     };
@@ -14,15 +20,11 @@ const Expense = ({movement, toggleStatus, changeValue, changeConcept}) => {
     
     return (
         <PeriodMovement
-            type={movement.movementType}
+            type={movementType}
             className='period-expense' 
             movement={movement}
-            changeValue={onChangeValue(movement.id)}
-            changeConcept={onChangeConcept(movement.id)}>
-            <MovementStatus
-                toggleStatus={() => toggleStatus(movement.id)}
-                status={movement.status} />
-        </PeriodMovement>
+            changeValue={onChangeValue(id)}
+            changeConcept={onChangeConcept(id)} />
     );
 };
 export default Expense;

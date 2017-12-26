@@ -1,7 +1,9 @@
 import React from 'react';
 import './Navigation.css';
 
-const Navigation = ({goHome}) => {
+const Navigation = ({
+    goHome = () => {}
+}) => {
     return (
         <ul className="navigation">
             <li className="navigation-link" onClick={() => goHome('')}>

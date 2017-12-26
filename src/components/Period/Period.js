@@ -7,32 +7,30 @@ import ExpandableData from '../ExpandableData/ExpandableData.js';
 import './Period.css';
 
 
-const Period = (props) => {
-    const { 
-        period, 
-        changeStartDate, 
-        changeEndDate, 
-        changeName, 
-        toggleStatus, 
-        changeValue, 
-        changeConcept 
-    } = props;
-    const { name, startDate, endDate, movements } = period;
-    const ID = period.id;
+const Period = ({
+    period = {}, 
+    changeStartDate = () => {}, 
+    changeEndDate = () => {}, 
+    changeName = () => {}, 
+    toggleStatus = () => {}, 
+    changeValue = () => {}, 
+    changeConcept = () => {}
+}) => {
+    const { name, startDate, endDate, movements, id } = period;
     
     const onNameChange = (event) => {
         const value = event.target.value;
-        changeName(ID, value);
+        changeName(id, value);
     };
 
     const onStartDateChange = (event) => {
         const value = event.target.value;
-        changeStartDate(ID, value);
+        changeStartDate(id, value);
     };
 
     const onEndDateChange = (event) => {
         const value = event.target.value;
-        changeEndDate(ID, value);
+        changeEndDate(id, value);
     };
 
     return (

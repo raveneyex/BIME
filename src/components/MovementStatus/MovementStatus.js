@@ -1,8 +1,10 @@
 import React from 'react';
 import './MovementStatus.css';
 
-const MovementStatus = (props) => {
-    const { status, toggleStatus = () => {} } = props;
+const MovementStatus = ({
+    status = '',
+    toggleStatus = () => {}
+}) => {
     const lowercaseStatus = status.toLowerCase();
 
     return (

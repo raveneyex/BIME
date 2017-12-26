@@ -3,8 +3,10 @@ import EditableField from '../EditableField/EditableField';
 
 import './MovementValue.css';
 
-const MovementValue = (props) => {
-    const { defaultValue, changeValue = () => {} } = props;
+const MovementValue = ({
+    defaultValue = '',
+    changeValue = () => {}
+}) => {
     
     const onChangeValue = (event) => {
         let value = event.target.value;

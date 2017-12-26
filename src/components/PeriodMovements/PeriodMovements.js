@@ -1,29 +1,33 @@
 import React from 'react';
-import { MOVEMENT_TYPES } from '../../constants';
-import Income from '../Income/Income';
-import Expense from '../Expense/Expense';
+import PeriodMovement from '../PeriodMovement/PeriodMovement';
+import { movementTypesSort } from '../../lib/utils';
 import './PeriodMovements.css';
 
-const PeriodMovements = ({movements, toggleStatus, changeValue, changeConcept}) => {
-    const incomes = movements.filter(m => m.movementType === MOVEMENT_TYPES.INCOME);
-    const expenses = movements.filter(m => m.movementType === MOVEMENT_TYPES.EXPENSE);
+const PeriodMovements = ({
+    movements = [], 
+    toggleStatus = () => {}, 
+    changeValue = () => {}, 
+    changeConcept = () => {}
+}) => {
+    const sortedMovements = movements.sort(movementTypesSort);
+
+    const onChangeValue = (id) => (value) => {
+        changeValue(id, value);
+    };
+
+    const onChangeConcept = (id) => (concept) => {
+        changeConcept(id, concept);
+    };
     
     return (
         <ul className='period-movements'>
-        {incomes.map((income, index) =>
-            <Income
-                key={`income-${index}`} 
-                movement={income}
-                changeValue={changeValue}
-                changeConcept={changeConcept}  />
-        )}
-        {expenses.map((expense, index) =>
-            <Expense 
-                key={`expense-${index}`} 
-                movement={expense} 
+        {sortedMovements.map((movement, index) => 
+            <PeriodMovement
+                key={index}
+                movement={movement}
                 toggleStatus={toggleStatus}
-                changeValue={changeValue}
-                changeConcept={changeConcept} />
+                changeConcept={onChangeConcept(movement.id)}
+                changeValue={onChangeValue(movement.id)} />
         )}
         </ul>
     );

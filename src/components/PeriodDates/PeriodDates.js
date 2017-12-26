@@ -3,9 +3,12 @@ import EditableField from '../EditableField/EditableField';
 
 import './PeriodDates.css';
 
-const PeriodDates = (props) => {
-    const {startDate, endDate, onStartDateChange, onEndDateChange } = props;
-
+const PeriodDates = ({
+    startDate = '',
+    endDate = '',
+    onStartDateChange = () => {},
+    onEndDateChange = () => {}
+}) => {
     return (
         <div className='period-dates'>
             <EditableField

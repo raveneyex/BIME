@@ -3,7 +3,7 @@ import App from './App/App.js';
 import { 
     switchCurrentPeriod, 
     editStartDate, 
-    editEndDate, 
+    editEndDate,
     editName,
     toggleStatus,
     editConcept,

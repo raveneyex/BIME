@@ -4,18 +4,17 @@ import Period from '../Period/Period';
 import Navigation from '../Navigation/Navigation';
 import './App.css';
 
-const App = (props) => {
-    const {
-        periods, 
-        currentPeriod, 
-        changePeriod,
-        changeStartDate,
-        changeEndDate,
-        changeName,
-        toggleStatus,
-        changeValue,
-        changeConcept
-    } = props;
+const App = ({
+    periods = [],
+    currentPeriod = '',
+    changePeriod = () => {},
+    changeStartDate = () => {},
+    changeEndDate = () => {},
+    changeName = () => {},
+    toggleStatus = () => {},
+    changeValue = () => {},
+    changeConcept = () => {}
+}) => {
     const period = currentPeriod 
         ? periods.find(p => p.id === currentPeriod) 
         : null;
