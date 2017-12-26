@@ -5,7 +5,8 @@ import './PeriodMovements.css';
 
 const PeriodMovements = ({
     movements = [], 
-    toggleStatus = () => {}, 
+    toggleStatus = () => {},
+    toggleType = () => {},
     changeValue = () => {}, 
     changeConcept = () => {}
 }) => {
@@ -26,6 +27,7 @@ const PeriodMovements = ({
                 key={index}
                 movement={movement}
                 toggleStatus={toggleStatus}
+                toggleType={toggleType}
                 changeConcept={onChangeConcept(movement.id)}
                 changeValue={onChangeValue(movement.id)} />
         )}

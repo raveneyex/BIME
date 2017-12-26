@@ -12,7 +12,8 @@ const Period = ({
     changeStartDate = () => {}, 
     changeEndDate = () => {}, 
     changeName = () => {}, 
-    toggleStatus = () => {}, 
+    toggleStatus = () => {},
+    toggleType = () => {},
     changeValue = () => {}, 
     changeConcept = () => {}
 }) => {
@@ -47,6 +48,7 @@ const Period = ({
                 <PeriodMovements 
                     movements={movements}
                     toggleStatus={toggleStatus}
+                    toggleType={toggleType}
                     changeValue={changeValue}
                     changeConcept={changeConcept} />
                 <ExpandableData period={period} />

@@ -12,6 +12,7 @@ const App = ({
     changeEndDate = () => {},
     changeName = () => {},
     toggleStatus = () => {},
+    toggleType = () => {},
     changeValue = () => {},
     changeConcept = () => {}
 }) => {
@@ -29,6 +30,7 @@ const App = ({
                 changeEndDate={changeEndDate}
                 changeName={changeName}
                 toggleStatus={toggleStatus}
+                toggleType={toggleType}
                 changeValue={changeValue}
                 changeConcept={changeConcept} />
             : <PeriodList 

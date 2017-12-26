@@ -6,13 +6,14 @@
 
 * Design Components:
     * Movement Type
-    * Movements
     * Period Info
 
 * Check BEM
     * Possibly refactor className in whole app to follow BEM.
 
 ## Code
+
+* Refactor `App.js`
 
 * Fully bind actions to UI
 

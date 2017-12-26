@@ -9,15 +9,18 @@ const PeriodMovement = ({
     movement = {},
     changeConcept = () => {},
     changeValue = () => {},
-    toggleStatus = () => {}
+    toggleStatus = () => {},
+    toggleType = () => {}
 }) => {
     const { movementType, concept, value, status, id } = movement;
     
     return (
         <li className={`period-movement ${movementType.toLowerCase()}`}>
             <MovementStatus
+                type={movementType}
+                status={status}
                 toggleStatus={() => toggleStatus(id)}
-                status={status} />
+                toggleType={() => toggleType(id)}/>
             <MovementConcept
                 defaultValue={concept}
                 className='movement-concept'
