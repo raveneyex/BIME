@@ -14,7 +14,8 @@ const App = ({
     toggleStatus = () => {},
     toggleType = () => {},
     changeValue = () => {},
-    changeConcept = () => {}
+    changeConcept = () => {},
+    addMovement = () => {}
 }) => {
     const period = currentPeriod 
         ? periods.find(p => p.id === currentPeriod) 
@@ -32,7 +33,8 @@ const App = ({
                 toggleStatus={toggleStatus}
                 toggleType={toggleType}
                 changeValue={changeValue}
-                changeConcept={changeConcept} />
+                changeConcept={changeConcept}
+                addMovement={addMovement} />
             : <PeriodList 
                 periods={periods} 
                 changePeriod={changePeriod} />

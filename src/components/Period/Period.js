@@ -2,7 +2,8 @@ import React from 'react';
 import PeriodTitle from '../PeriodTitle/PeriodTitle';
 import PeriodDates from '../PeriodDates/PeriodDates';
 import PeriodMovements from '../PeriodMovements/PeriodMovements.js';
-import ExpandableData from '../ExpandableData/ExpandableData.js';
+import PeriodInfo from '../PeriodInfo/PeriodInfo.js';
+import PeriodActions from '../PeriodActions/PeriodActions';
 
 import './Period.css';
 
@@ -15,7 +16,8 @@ const Period = ({
     toggleStatus = () => {},
     toggleType = () => {},
     changeValue = () => {}, 
-    changeConcept = () => {}
+    changeConcept = () => {},
+    addMovement = () => {}
 }) => {
     const { name, startDate, endDate, movements, id } = period;
     
@@ -45,13 +47,15 @@ const Period = ({
                     endDate={endDate}
                     onStartDateChange={onStartDateChange}
                     onEndDateChange={onEndDateChange} />
+                <PeriodActions
+                    addMovement={addMovement} />
                 <PeriodMovements 
                     movements={movements}
                     toggleStatus={toggleStatus}
                     toggleType={toggleType}
                     changeValue={changeValue}
                     changeConcept={changeConcept} />
-                <ExpandableData period={period} />
+                <PeriodInfo period={period} />
             </form>
         </div>
     )

@@ -1,7 +1,6 @@
 export const MOVEMENT_STATUS = {
     PAID: 'PAID',
-    UNPAID: 'UNPAID',
-    NA: "N/A"
+    UNPAID: 'UNPAID'
 };
 
 export const MOVEMENT_TYPES = {

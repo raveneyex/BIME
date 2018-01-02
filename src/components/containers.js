@@ -8,7 +8,8 @@ import {
     toggleStatus,
     editConcept,
     editValue,
-    toggleType
+    toggleType,
+    addMovement
 } from '../redux/actionCreators.js';
 
 export const AppContainer = connect(
@@ -40,6 +41,9 @@ export const AppContainer = connect(
         },
         changeConcept(id, concept) {
             dispatch(editConcept(id, concept));
+        },
+        addMovement() {
+            dispatch(addMovement());
         }
     })
 )(App);

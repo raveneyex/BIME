@@ -3,6 +3,7 @@
     width: 35%;
 
     display: flex;
+    max-height: 40px;
 }
 
 .movement-value .currency-sign {
@@ -11,16 +12,20 @@
 
     flex: 0 0 15%;
     width: 15%;
-    height: 50px;
 
-    font-size: 40px;
-    line-height: 45px;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: right;
 
     color: darkgray;
 }
 
 .movement-value .movement-value_input {
-    line-height: 45px;
-    flex: 0 0 75%;
-    font-size: 40px;
+    line-height: 30px;
+    font-size: 25px;
+
+    flex: 0 0 85%;
+    width: 85%;
+    text-align: center;
+    font-weight: bold;
 }

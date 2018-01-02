@@ -5,10 +5,9 @@ export const movement = (state = {}, action) => {
         case ACTIONS.ADD_MOVEMENT:
             return {
                 id: action.id,
-                concept: action.concept,
-                value: action.value,
-                type: action.type,
-                status: action.status
+                value: 0,
+                movementType: MOVEMENT_TYPES.INCOME,
+                concept: ''
             };
         case ACTIONS.EDIT_CONCEPT:
             return (state.id !== action.id) 
@@ -25,13 +24,13 @@ export const movement = (state = {}, action) => {
                     value: action.value
                 };
         case ACTIONS.TOGGLE_TYPE:
+            const isIncome = state.movementType === MOVEMENT_TYPES.INCOME;
             return (state.id !== action.id)
                 ? state
                 : {
                     ...state,
-                    movementType: state.movementType === MOVEMENT_TYPES.INCOME
-                        ? MOVEMENT_TYPES.EXPENSE
-                        : MOVEMENT_TYPES.INCOME
+                    status: !state.status && isIncome ? MOVEMENT_STATUS.UNPAID: state.status, 
+                    movementType: isIncome? MOVEMENT_TYPES.EXPENSE : MOVEMENT_TYPES.INCOME
                 };
         case ACTIONS.TOGGLE_STATUS:
             return (state.id !== action.id)
@@ -51,8 +50,8 @@ export const movements = (state = [], action) => {
     switch (action.type) {
         case ACTIONS.ADD_MOVEMENT:
             return [
-                ...state,
-                movement({}, action)
+                movement({}, action),
+                ...state
             ];
         case ACTIONS.REMOVE_MOVEMENT:
             return state.filter(movement => movement.id !== action.id);

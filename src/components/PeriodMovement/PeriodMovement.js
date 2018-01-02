@@ -12,8 +12,7 @@ const PeriodMovement = ({
     toggleStatus = () => {},
     toggleType = () => {}
 }) => {
-    const { movementType, concept, value, status, id } = movement;
-    
+    const { movementType = '', concept = '', value = '', status = '', id } = movement;
     return (
         <li className={`period-movement ${movementType.toLowerCase()}`}>
             <MovementStatus

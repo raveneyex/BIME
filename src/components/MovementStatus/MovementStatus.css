@@ -20,6 +20,7 @@
     vertical-align: baseline;
     border-radius: .25rem;
     text-transform: capitalize;
+    cursor: pointer;
     max-height: 24px;
 }
 
@@ -44,6 +45,7 @@
     font-weight: 700;
     line-height: 1;
     vertical-align: baseline;
+    cursor: pointer;
 }
 
 .movement-status .type-income {

@@ -1,0 +1,34 @@
+.summary-field {
+    font-weight: bold;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0 10px 0 10px;
+}
+
+
+.summary-field .summary-label {
+    text-transform: uppercase;
+    text-align: left;
+    width: 65%;
+    flex: 0 0 65%;
+}
+
+.summary-field .summary-num-items,
+.summary-field .summary-total-value {
+    text-align: center;
+    flex: 0 0 auto;
+}
+
+.summary-field .summary-num-items {
+    width: 15%;
+    flex: 0 0 15%; /* fuck ie/edge */
+}
+
+.summary-field .summary-total-value {
+    width: 35%;
+    flex: 0 0 35%;  /* fuck ie/edge */
+}
+
+
+
+

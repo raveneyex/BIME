@@ -5,8 +5,7 @@
 * Find typography and apply app-wide
 
 * Design Components:
-    * Movement Type
-    * Period Info
+    * Check to remove currency Sign.
 
 * Check BEM
     * Possibly refactor className in whole app to follow BEM.
@@ -15,6 +14,7 @@
 
 * Refactor `App.js`
 
+* Add Selection to PeriodMovements
 * Fully bind actions to UI
 
 * Add TabIndex

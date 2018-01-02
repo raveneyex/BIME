@@ -4,6 +4,7 @@ import EditableField from '../EditableField/EditableField';
 import './MovementValue.css';
 
 const MovementValue = ({
+    className = 'movement-value',
     defaultValue = '',
     changeValue = () => {}
 }) => {
@@ -14,7 +15,7 @@ const MovementValue = ({
     };
 
     return (
-        <div className='movement-value'>
+        <div className={`movement-value ${className}`}>
             <input
                 className='currency-sign'
                 type="text"

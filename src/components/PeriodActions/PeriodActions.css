@@ -1,0 +1,15 @@
+.period-actions {
+    flex: 1 1 100%;
+    box-sizing: border-box;
+    padding: 5px 20px 5px;
+    border-top: 2px solid gray;
+    text-align: right;
+}
+
+.period-actions .action {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 700;
+    color: gray;
+    text-shadow: 1px 1px 1px darkgray;
+}

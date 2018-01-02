@@ -11,7 +11,8 @@ const PeriodList = ({
     return (
         <ul className="periods">
             {periods.map((period, index) =>
-                <PeriodInfo key={index}
+                <PeriodInfo 
+                    key={period.id}
                     period={period} 
                     onClick={() => changePeriod(period.id) }/>
             )}

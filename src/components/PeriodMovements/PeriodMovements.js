@@ -22,9 +22,9 @@ const PeriodMovements = ({
     
     return (
         <ul className='period-movements'>
-        {sortedMovements.map((movement, index) => 
+        {sortedMovements.map((movement, index) =>
             <PeriodMovement
-                key={index}
+                key={movement.id}
                 movement={movement}
                 toggleStatus={toggleStatus}
                 toggleType={toggleType}

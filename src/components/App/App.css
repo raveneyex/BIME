@@ -11,3 +11,7 @@
     border: 1px solid gray;
     box-shadow: 1px 1px 1px gray;
 }
+
+* {
+    font-family: Helvetica, sans-serif;
+}
