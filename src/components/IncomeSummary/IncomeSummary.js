@@ -7,13 +7,12 @@ import './IncomeSummary.css';
 const IncomeSummary = ({
     incomes = []
 }) => {
-    const TOTAL = incomes.reduce((accumulator, currentValue) => accumulator + currentValue.value, 0);
+    const TOTAL = incomes.reduce((accumulator, currentValue) => accumulator + parseInt(currentValue.value, 10), 0);
     const NUM_INCOMES = incomes.length;
     
     return (
         <SummaryField
             type={MOVEMENT_TYPES.INCOME}
-            className='income-summary'
             total={TOTAL}
             num={NUM_INCOMES} />
     );

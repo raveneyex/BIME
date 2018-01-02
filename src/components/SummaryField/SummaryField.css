@@ -7,6 +7,9 @@
 
 
 .summary-field .summary-label {
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 30px;
     text-transform: uppercase;
     text-align: left;
     width: 65%;

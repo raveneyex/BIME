@@ -12,7 +12,7 @@ const SummaryField = ({
 }) => {
     const lowercaseType = type.toLowerCase(); 
     return (
-        <div className={`summary-field ${className}`}>
+        <div className={`summary-field summary-${lowercaseType}`}>
             <ReadonlyField defaultValue={type} className={`summary-label label-${lowercaseType}`} name={`summary-${lowercaseType}`} />
             <MovementValue defaultValue={total} className={`summary-total-value total-value-${lowercaseType}`} />
         </div>

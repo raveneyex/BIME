@@ -7,7 +7,7 @@ import './ExpenseSummary.css';
 const ExpenseSummary = ({
     expenses = []
 }) => {
-    const TOTAL = expenses.reduce((accumulator, currentValue) => accumulator + currentValue.value, 0);
+    const TOTAL = expenses.reduce((accumulator, currentValue) => accumulator + parseInt(currentValue.value, 10), 0);
     const NUM_EXPENSES = expenses.length;
 
     return (
