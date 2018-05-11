@@ -1,5 +1,4 @@
 import React from 'react';
-import { MOVEMENT_TYPES } from '../../constants';
 
 import IncomeSummary from '../IncomeSummary/IncomeSummary';
 import ExpenseSummary from '../ExpenseSummary/ExpenseSummary';
@@ -7,16 +6,14 @@ import ExpenseSummary from '../ExpenseSummary/ExpenseSummary';
 import './PeriodInfo.css';
 
 const PeriodInfo = ({
-    period = {}
+    incomes = 0,
+    expenses = 0
 }) => {
-    const { movements = [] } = period;
-    const INCOMES = movements.filter(i => i.movementType === MOVEMENT_TYPES.INCOME);
-    const EXPENSES = movements.filter(e => e.movementType === MOVEMENT_TYPES.EXPENSE);
-    
+    debugger;
     return (
         <div className='period-info'>
-            <IncomeSummary incomes={INCOMES} />
-            <ExpenseSummary expenses={EXPENSES} />
+            <IncomeSummary incomes={incomes} />
+            <ExpenseSummary expenses={expenses} />
         </div>
     );
 };

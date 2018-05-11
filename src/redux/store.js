@@ -7,8 +7,9 @@ import stateData from '../state.json';
  * another endpoint with UI-State data only, to handle preferred views and so on.
  */
 const getInitialState = (data = {}) => {
-    let reduxStore = localStorage['redux-store'];
-    return reduxStore ? JSON.parse(reduxStore): data;
+    // let reduxStore = localStorage['redux-store'];
+    // return reduxStore ? JSON.parse(reduxStore): data;
+    return data;
 };
 
 const logger = (store) => (next) => (action) => {
@@ -22,7 +23,7 @@ const logger = (store) => (next) => (action) => {
 
 const saver = (store) => (next) => (action) => {
     let result = next(action);
-    localStorage['redux-store'] = JSON.stringify(store.getState());
+    // localStorage['redux-store'] = JSON.stringify(store.getState());
     return result;
 };
 

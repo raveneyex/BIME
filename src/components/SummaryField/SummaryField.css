@@ -12,8 +12,8 @@
     line-height: 30px;
     text-transform: uppercase;
     text-align: left;
-    width: 65%;
-    flex: 0 0 65%;
+    width: 40%;
+    flex: 0 0 40%;
 }
 
 .summary-field .summary-num-items,

@@ -21,7 +21,10 @@
                     "movementType": "EXPENSE",
                     "status": "PAID"
                 }
-            ]
+            ],
+            "incomes": 0,
+            "expenses": 0,
+            "balance": 0
         },
         {
             "id": "667",
@@ -51,7 +54,10 @@
                     "movementType": "EXPENSE",
                     "status": "PAID"
                 }
-            ]
+            ],
+            "incomes": 0,
+            "expenses": 0,
+            "balance": 0
         }
     ],
     "currentPeriod": null

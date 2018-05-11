@@ -3,7 +3,7 @@ import './ReadonlyField.css';
 
 const ReadonlyField = ({
     name = '',
-    defaultValue = '',
+    defaultValue,
     className = ''
 }) => {
     return (
@@ -11,8 +11,9 @@ const ReadonlyField = ({
             type="text"
             className={`readonly-field ${className}`}
             name={name}
-            defaultValue={defaultValue}
-            readOnly={true}/>
+            value={defaultValue}
+            readOnly
+            />
     );
 };
 

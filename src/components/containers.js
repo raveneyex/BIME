@@ -47,3 +47,4 @@ export const AppContainer = connect(
         }
     })
 )(App);
+//BindActionCreators

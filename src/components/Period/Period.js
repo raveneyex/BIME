@@ -19,7 +19,7 @@ const Period = ({
     changeConcept = () => {},
     addMovement = () => {}
 }) => {
-    const { name, startDate, endDate, movements, id } = period;
+    const { name, startDate, endDate, movements, id, incomes, expenses } = period;
     
     const onNameChange = (event) => {
         const value = event.target.value;
@@ -55,7 +55,9 @@ const Period = ({
                     toggleType={toggleType}
                     changeValue={changeValue}
                     changeConcept={changeConcept} />
-                <PeriodInfo period={period} />
+                <PeriodInfo 
+                    incomes={incomes}
+                    expenses={expenses} />
             </form>
         </div>
     )

@@ -5,17 +5,13 @@ import { MOVEMENT_TYPES } from '../../constants';
 import './ExpenseSummary.css';
 
 const ExpenseSummary = ({
-    expenses = []
+    expenses = 0
 }) => {
-    const TOTAL = expenses.reduce((accumulator, currentValue) => accumulator + parseInt(currentValue.value, 10), 0);
-    const NUM_EXPENSES = expenses.length;
-
     return (
         <SummaryField
             type={MOVEMENT_TYPES.EXPENSE}
             className='expense-summary'
-            total={TOTAL}
-            num={NUM_EXPENSES} />
+            total={expenses} />
     );
 };
 

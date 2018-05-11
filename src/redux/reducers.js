@@ -1,6 +1,39 @@
 import { ACTIONS, MOVEMENT_TYPES, MOVEMENT_STATUS } from '../constants.js';
 
-export const movement = (state = {}, action) => {
+export const periods = (state = [], action) => {
+    switch (action.type) {
+        case ACTIONS.ADD_PERIOD:
+            return [
+                ...state,
+                period({}, action)
+            ];
+        case ACTIONS.REMOVE_PERIOD:
+            return state.filter(item => item.id !== action.id);
+        case ACTIONS.EDIT_NAME:
+        case ACTIONS.EDIT_START_DATE:
+        case ACTIONS.EDIT_END_DATE:
+        case ACTIONS.ADD_MOVEMENT:
+        case ACTIONS.REMOVE_MOVEMENT:
+        case ACTIONS.EDIT_CONCEPT:
+        case ACTIONS.EDIT_VALUE:
+        case ACTIONS.TOGGLE_TYPE:
+        case ACTIONS.TOGGLE_STATUS:
+            return state.map(item => period(item, action));
+        default:
+            return state;
+    }
+};
+
+export const currentPeriod = (state = '', action) => {
+    switch (action.type) {
+        case ACTIONS.SWITCH_PERIOD:
+            return state !== action.id ? action.id : state;
+        default:
+            return state;
+    }
+};
+
+const movement = (state = {}, action) => {
     switch (action.type) {
         case ACTIONS.ADD_MOVEMENT:
             return {
@@ -46,7 +79,7 @@ export const movement = (state = {}, action) => {
     }
 };
 
-export const movements = (state = [], action) => {
+const movements = (state = [], action) => {
     switch (action.type) {
         case ACTIONS.ADD_MOVEMENT:
             return [
@@ -65,9 +98,12 @@ export const movements = (state = [], action) => {
     }
 };
 
-export const period = (state = {}, action) => {
+const period = (state = {}, action) => {
+    let moves;
     switch (action.type) {
         case ACTIONS.ADD_PERIOD:
+            moves = movements([], action);
+
             return {
                 id: action.id,
                 name: action.name,
@@ -75,7 +111,9 @@ export const period = (state = {}, action) => {
                 endDate: action.endDate,
                 notes: action.notes,
                 expanded: false,
-                movements: movements([], action)
+                movements: moves,
+                incomes: incomes(moves),
+                expenses: expenses(moves)
             };
         case ACTIONS.EDIT_NOTE:
             return (state.id !== action.id)
@@ -118,44 +156,36 @@ export const period = (state = {}, action) => {
         case ACTIONS.EDIT_VALUE:
         case ACTIONS.TOGGLE_TYPE:
         case ACTIONS.TOGGLE_STATUS:
+            moves = movements(state.movements, action);
             return {
                 ...state,
-                movements: movements(state.movements, action)
-            }
+                movements: moves,
+                incomes: incomes(moves),
+                expenses: expenses(moves)
+            };
         default:
             return state;
     }
 };
 
-export const periods = (state = [], action) => {
-    switch (action.type) {
-        case ACTIONS.ADD_PERIOD:
-            return [
-                ...state,
-                period({}, action)
-            ];
-        case ACTIONS.REMOVE_PERIOD:
-            return state.filter(item => item.id !== action.id);
-        case ACTIONS.EDIT_NAME:
-        case ACTIONS.EDIT_START_DATE:
-        case ACTIONS.EDIT_END_DATE:
-        case ACTIONS.ADD_MOVEMENT:
-        case ACTIONS.REMOVE_MOVEMENT:
-        case ACTIONS.EDIT_CONCEPT:
-        case ACTIONS.EDIT_VALUE:
-        case ACTIONS.TOGGLE_TYPE:
-        case ACTIONS.TOGGLE_STATUS:
-            return state.map(item => period(item, action));
-        default:
-            return state;
-    }
+const sumByProp = (prop) => (accumulator, next) => accumulator + parseInt(next[prop], 10);
+
+const filter = (prop, movementType) => (item) => item[prop] === movementType;
+
+const sumValue = sumByProp('value');
+const incomesFilter = filter('movementType', MOVEMENT_TYPES.INCOME);
+const expensesFilter = filter('movementType', MOVEMENT_TYPES.EXPENSE);
+const paidsFilter = filter('status', MOVEMENT_STATUS.PAID);
+
+const incomes = (items = []) => {
+    return items
+        .filter(incomesFilter)
+        .reduce(sumValue, 0);
 };
 
-export const currentPeriod = (state = '', action) => {
-    switch (action.type) {
-        case ACTIONS.SWITCH_PERIOD:
-            return state !== action.id ? action.id : state;
-        default:
-            return state;
-    }
+const expenses = (items = []) => {
+    return items
+        .filter(expensesFilter)
+        .filter(paidsFilter)
+        .reduce(sumValue, 0)
 };
