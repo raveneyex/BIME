@@ -1,16 +1,12 @@
 # ToDo
 
 ### BUGS
-* Fix Toggle
 * Fix Layout
 * CSS in JS? Do.
 
 ## Design
 
 * Find typography and apply app-wide
-
-* Design Components:
-    * Check to remove currency Sign.
 
 * Check BEM
     * Possibly refactor className in whole app to follow BEM.

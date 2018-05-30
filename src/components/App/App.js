@@ -7,14 +7,14 @@ import './App.css';
 const App = ({
     periods = [],
     currentPeriod = '',
-    changePeriod = () => {},
-    changeStartDate = () => {},
-    changeEndDate = () => {},
-    changeName = () => {},
+    switchCurrentPeriod = () => {},
+    editStartDate = () => {},
+    editEndDate = () => {},
+    editName = () => {},
     toggleStatus = () => {},
     toggleType = () => {},
-    changeValue = () => {},
-    changeConcept = () => {},
+    editValue = () => {},
+    editConcept = () => {},
     addMovement = () => {}
 }) => {
     const period = currentPeriod 
@@ -23,21 +23,21 @@ const App = ({
         
     return (
         <div className="app">
-            <Navigation goHome={changePeriod} />
+            <Navigation goHome={switchCurrentPeriod} />
         {period
             ? <Period 
                 period={period} 
-                changeStartDate={changeStartDate}
-                changeEndDate={changeEndDate}
-                changeName={changeName}
+                changeStartDate={editStartDate}
+                changeEndDate={editEndDate}
+                changeName={editName}
                 toggleStatus={toggleStatus}
                 toggleType={toggleType}
-                changeValue={changeValue}
-                changeConcept={changeConcept}
+                changeValue={editValue}
+                changeConcept={editConcept}
                 addMovement={addMovement} />
             : <PeriodList 
                 periods={periods} 
-                changePeriod={changePeriod} />
+                changePeriod={switchCurrentPeriod} />
         }
         </div>
     );
